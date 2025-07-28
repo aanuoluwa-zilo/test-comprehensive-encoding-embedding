@@ -1,0 +1,14 @@
+{
+"app":{
+"name":"Test App 1",
+"version":"1.1.0",
+"settings":{
+"debug":false,
+"log_level":"info"
+}
+},
+"database":{
+"host":"db-1.example.com",
+"port":5432
+}
+}
