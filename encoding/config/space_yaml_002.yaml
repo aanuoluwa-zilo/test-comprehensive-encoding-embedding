@@ -1,0 +1,10 @@
+# Space indented YAML 2
+app:
+  name: "Test App 2"
+  version: "1.2.0"
+  settings:
+    debug: false
+    log_level: info
+database:
+  host: db-2.example.com
+  port: 5432
