@@ -1,0 +1,71 @@
+# Microservice Configuration 3
+service:
+  name: "user-service-3"
+  version: "2.3.1"
+  environment: "production"
+  port: 3003
+  host: "0.0.0.0"
+
+database:
+  host: "db-cluster-3.example.com"
+  port: 5432
+  name: "user_db_3"
+  username: "service_user_3"
+  password: "${DB_PASSWORD}"
+  ssl:
+    enabled: true
+    mode: "require"
+  pool:
+    min: 5
+    max: 50
+    acquire: 30000
+    idle: 10000
+
+cache:
+  redis:
+    host: "redis-cluster-3.example.com"
+    port: 6379
+    password: "${REDIS_PASSWORD}"
+    db: 0
+    maxConnections: 100
+
+logging:
+  level: "info"
+  format: "json"
+  output: "stdout"
+  timestamp: true
+  correlationId: true
+
+security:
+  jwt:
+    secret: "${JWT_SECRET}"
+    expiration: 3600
+    refreshExpiration: 604800
+  cors:
+    origins:
+      - "https://app3.example.com"
+      - "https://admin3.example.com"
+    methods: ["GET", "POST", "PUT", "DELETE"]
+    headers: ["Content-Type", "Authorization"]
+  rateLimit:
+    windowMs: 900000
+    maxRequests: 1000
+
+monitoring:
+  metrics:
+    enabled: true
+    interval: 60
+    endpoint: "/metrics"
+  health:
+    enabled: true
+    endpoint: "/health"
+    timeout: 5000
+  tracing:
+    enabled: true
+    sampling: 0.1
+
+features:
+  newUI: true
+  advancedAnalytics: false
+  betaFeatures: true
+  maintenanceMode: false
