@@ -1,0 +1,10 @@
+# Tab indented YAML 3
+app:
+	name: "Test App 3"
+	version: "1.3.0"
+	settings:
+		debug: false
+		log_level: info
+database:
+	host: db-3.example.com
+	port: 5432
